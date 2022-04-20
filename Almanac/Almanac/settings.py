@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 ]
 
 CUSTOM_APPS =[
-    'core',
+    'event',
 ]
 
 INSTALLED_LIBRARIES = [
