@@ -63,3 +63,16 @@ class Prize(models.Model):
 
 	def __str__(self) -> str:
 		return super().__str__()
+
+
+
+class Enrollment(models.Model):
+	user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+	hackathon = models.ForeignKey(Hackathon, on_delete=models.CASCADE)
+	eid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+	enrollment_date = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		return self.username + self.htitle
+
+
