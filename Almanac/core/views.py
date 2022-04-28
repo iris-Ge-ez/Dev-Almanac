@@ -166,6 +166,13 @@ class ApplicationDetailView(generic.DetailView):
 		context = super().get_context_data(**kwargs)
 		return context
 
+class ApplicationUpdateView(generic.UpdateView):
+	model = Application
+	form_class = ApplicationForm
+	template_name = 'applicationupdate.html'
+	success_url = '/appdetail/'
+
+
 class EnrollmentPostView(generic.CreateView):
 	model = Enrollment
 	form_class = EnrollmentForm
@@ -195,4 +202,8 @@ class EnrollmentDetailView(generic.DetailView):
 		context = super().get_context_data(**kwargs)
 		return context
 
-
+class EnrollmentUpdateView(generic.UpdateView):
+	model = Enrollment
+	form_class = EnrollmentForm
+	template_name = 'enrollmentupdate.html'
+	success_url = '/enrolldetail/'

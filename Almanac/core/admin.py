@@ -12,7 +12,7 @@ class ProjectAdminModel(admin.ModelAdmin):
 
 class HackathonAdminModel(admin.ModelAdmin):
 	readonly_fields = ['hid']
-	list_display = ('htitle', 'posted_by', 'go_live')
+	list_display = ('title', 'posted_by', 'go_live')
 	fieldsets = (
 			('Hackathon Detail', {
 				'fields': ('title', 'description', 'tags', 'posted_by', 'go_live', 'hid', 'start_date_time', 'end_date_time')
@@ -46,12 +46,12 @@ class EnrollmentAdminModel(admin.ModelAdmin):
 		)
 
 class PrizeAdminModel(admin.ModelAdmin):
-    list_display = ('hackathon', 'prize_description')
-    fieldsets = (
-            ('Prize Detail', {
-                'fields': ('hackathon', 'prize_description')
-                }),
-        )
+	list_display = ('hackathon', 'grand')
+	fieldsets = (
+			('Prize Detail', {
+				'fields': ('hackathon', 'grand')
+				}),
+		)
 
 admin.site.register(Project, ProjectAdminModel)
 admin.site.register(Hackathon, HackathonAdminModel)

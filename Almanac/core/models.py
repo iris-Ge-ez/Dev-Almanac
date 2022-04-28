@@ -7,6 +7,8 @@ from taggit.managers import TaggableManager
 from accounts.models import CustomUser
 import uuid
 
+from django_mysql.models import ListCharField
+
 class Project(models.Model):
 	title = models.CharField(max_length=120)
 	description = RichTextField()
@@ -55,11 +57,11 @@ class Task(models.Model):
 class Prize(models.Model):
 	hackathon = models.ForeignKey(Hackathon, on_delete=models.CASCADE)
 	grand = models.IntegerField()
-	solo_ranked = ListCharField(
-		base_field=CharField(max_length=10),
-		size=6,
-		max_length=(6*11),
-	)
+	# solo_ranked = ListCharField(
+	# 	base_field=CharField(max_length=10),
+	# 	size=6,
+	# 	max_length=(6*11),
+	# )
 
 	def __str__(self) -> str:
 		return super().__str__()
