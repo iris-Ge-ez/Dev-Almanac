@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
 CUSTOM_APPS =[
     'core',
+    'accounts',
 ]
 
 INSTALLED_LIBRARIES = [
@@ -48,6 +49,7 @@ INSTALLED_LIBRARIES = [
     'taggit',
 ]
 
+AUTH_USER_MODEL = 'Accounts.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
