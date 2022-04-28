@@ -49,7 +49,7 @@ INSTALLED_LIBRARIES = [
     'taggit',
 ]
 
-AUTH_USER_MODEL = 'Accounts.CustomUser'
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
