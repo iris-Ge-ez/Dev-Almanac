@@ -44,7 +44,8 @@ CUSTOM_APPS =[
 ]
 
 INSTALLED_LIBRARIES = [
-
+    'ckeditor',
+    'taggit',
 ]
 
 
