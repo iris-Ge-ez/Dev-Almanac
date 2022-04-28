@@ -4,7 +4,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.forms import CharField
 from taggit.managers import TaggableManager
-from Accounts.models import CustomUser
+from accounts.models import CustomUser
 import uuid
 
 class Project(models.Model):

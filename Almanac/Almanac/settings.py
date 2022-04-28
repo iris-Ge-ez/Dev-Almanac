@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
 CUSTOM_APPS =[
     'core',
+    'accounts',
 ]
 
 INSTALLED_LIBRARIES = [
