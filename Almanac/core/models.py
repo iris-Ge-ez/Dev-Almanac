@@ -29,3 +29,17 @@ class Application(models.Model):
 
 	def __str__(self):
 		return self.username + self.title
+
+class Hackathon(models.Model):
+	title = models.CharField(max_length=120)
+	description = RichTextField()
+	tags = TaggableManager()
+	posted_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+	go_live = models.BooleanField(default=False)
+	hid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+	created_date = models.DateTimeField(auto_now_add=True)
+	start_date_time = models.DateTimeField()
+	end_date_time = models.DateTimeField()
+
+	def __str__(self):
+		return self.htitle
