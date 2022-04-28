@@ -21,3 +21,9 @@ urlpatterns = [
     path('core/', include('almanac.urls')),
     path('accounts/', include('accounts.urls')),
 ]
+
+module_urls = [
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+]
+
+urlpatterns += module_urls
