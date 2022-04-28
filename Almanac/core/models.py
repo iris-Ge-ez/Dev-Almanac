@@ -43,3 +43,23 @@ class Hackathon(models.Model):
 
 	def __str__(self):
 		return self.htitle
+    
+
+class Task(models.Model):
+	hackathon = models.ForeignKey(Hackathon, on_delete=models.CASCADE)
+	task_description = RichTextField()
+
+	def __str__(self):
+		return self.hackathon
+
+class Prize(models.Model):
+	hackathon = models.ForeignKey(Hackathon, on_delete=models.CASCADE)
+	grand = models.IntegerField()
+	solo_ranked = ListCharField(
+		base_field=CharField(max_length=10),
+		size=6,
+		max_length=(6*11),
+	)
+
+	def __str__(self) -> str:
+		return super().__str__()
