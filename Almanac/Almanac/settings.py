@@ -48,6 +48,7 @@ INSTALLED_LIBRARIES = [
 
 ]
 
+AUTH_USER_MODEL = 'Accounts.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
